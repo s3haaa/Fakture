@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="bs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Kako aplikacija Fakture tehnički čuva poslovne podatke u browseru i šta to znači pri brisanju podataka, promjeni browsera ili uređaja.">
+  <meta name="theme-color" content="#ffffff">
+  <title>Privatnost i lokalni podaci — Fakture</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../site/css/landing.css">
+  <link rel="stylesheet" href="../site/css/content-pages.css?v=1">
+  <script src="../site/js/landing.js" defer></script>
+</head>
+<body class="content-page">
+  <a class="skip-link" href="#sadrzaj">Preskoči na sadržaj</a>
+  <header class="site-header scrolled" data-header>
+    <div class="container nav-wrap">
+      <a class="brand" href="../index.html" aria-label="Fakture — početna"><span class="brand-mark" aria-hidden="true">F</span><span>Fakture</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" data-nav-toggle><span class="sr-only">Otvori navigaciju</span><span></span><span></span><span></span></button>
+      <nav class="main-nav" id="main-nav" aria-label="Glavna navigacija" data-nav>
+        <a href="../index.html">Početna</a><a href="../features/index.html">Mogućnosti</a><a href="../features/fakture/index.html">Fakture</a><a href="../features/ponude/index.html">Ponude</a><a href="../features/predracuni/index.html">Predračuni</a><a href="../help/index.html">Pomoć</a><a class="active" href="index.html" aria-current="page">Privatnost</a><a class="button button-small button-primary nav-cta" href="../app/index.html">Otvori aplikaciju</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="sadrzaj">
+    <section class="content-hero">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Putanja"><a href="../index.html">Početna</a><span>/</span><span aria-current="page">Privatnost</span></nav>
+        <div class="content-hero-grid">
+          <div><span class="kicker">PRIVATNOST I LOKALNI PODACI</span><h1>Vaši poslovni podaci ostaju u browseru.</h1><p class="lead">Aplikacija nema korisničke račune ni aplikacijski backend za spremanje poslovnih zapisa. Podaci se čuvaju lokalno u browseru i zato je backup važan.</p><div class="content-meta"><span>localStorage</span><span>Bez automatske sinhronizacije</span><span>JSON backup</span><span>Tehnički pregled</span></div></div>
+          <aside class="content-hero-aside"><strong>Najvažnije ukratko</strong><p>Brisanje browser podataka može trajno ukloniti fakture, klijente i postavke iz tog browsera. Prije toga izvezite backup.</p><a class="button button-primary" href="../app/index.html#importexport">Otvori Import / Export <span>→</span></a></aside>
+        </div>
+      </div>
+    </section>
+
+    <div class="container content-layout">
+      <nav class="content-toc" aria-label="Sadržaj stranice"><strong>Na ovoj stranici</strong><a href="#cuvanje">Kako se čuva</a><a href="#situacije">Šta se može dogoditi</a><a href="#mreza">Mrežni resursi</a><a href="#backup">Backup i zaštita</a></nav>
+      <div class="content-main">
+        <section class="content-section" id="cuvanje">
+          <div class="content-section-head"><span class="kicker">STVARNA IMPLEMENTACIJA</span><h2>Šta aplikacija čuva i gdje.</h2><p>Ovaj opis je zasnovan na trenutnom kodu aplikacije, bez pretpostavki o budućim funkcijama.</p></div>
+          <div class="fact-list">
+            <div class="fact-row"><strong>Poslovni podaci</strong><p>Podaci firme, profili, klijenti, fakture, ponude, predračuni, katalog, uplate, postavke, troškovi, projekti, zadaci i drugi radni zapisi čuvaju se kroz <code>localStorage</code> trenutnog browsera.</p></div>
+            <div class="fact-row"><strong>Privremeno stanje</strong><p><code>sessionStorage</code> se koristi za pamćenje trenutno otvorenog zapisa u editoru fakture. To nije zamjena za spremanje dokumenta.</p></div>
+            <div class="fact-row"><strong>Lokalni prilozi</strong><p>Sekcija Dokumenti čuva metapodatke poput naziva, lokacije i napomene. Aplikacija ne kopira niti briše originalnu lokalnu datoteku.</p></div>
+            <div class="fact-row"><strong>Logo firme</strong><p>Odabrani logo pretvara se u lokalni podatkovni zapis i čuva zajedno s podacima firme u browseru.</p></div>
+            <div class="fact-row"><strong>Automatska sinhronizacija</strong><p>Nije implementirana. Podaci se ne pojavljuju automatski u drugom browseru ili na drugom uređaju.</p></div>
+          </div>
+        </section>
+
+        <section class="content-section" id="situacije">
+          <div class="content-section-head"><span class="kicker">PRAKTIČNE POSLJEDICE</span><h2>Šta se može dogoditi u ovim situacijama.</h2><p>Lokalna pohrana je vezana za browser, uređaj i način pregledavanja koji koristite.</p></div>
+          <div class="scenario-grid">
+            <article class="scenario-card"><span class="scenario-icon">×</span><h3>Ako obrišete browser data</h3><p>Brisanje podataka web-stranice ili cjelokupnih browser podataka može ukloniti sve lokalne profile i poslovne zapise. Bez ranije izvezenog backupa aplikacija ih ne može vratiti sa servera.</p></article>
+            <article class="scenario-card"><span class="scenario-icon">B</span><h3>Ako koristite drugi browser</h3><p>Chrome, Edge, Firefox i drugi browseri imaju odvojenu lokalnu pohranu. U drugom browseru aplikacija može izgledati prazno dok ne uvezete backup.</p></article>
+            <article class="scenario-card"><span class="scenario-icon">D</span><h3>Ako koristite drugi uređaj</h3><p>Podaci se ne sinhronizuju automatski između računara ili telefona. Za prijenos izvezite JSON backup na starom uređaju i uvezite ga na novom.</p></article>
+            <article class="scenario-card"><span class="scenario-icon">I</span><h3>Ako koristite private/incognito mode</h3><p>Privatni prozor koristi odvojenu, privremenu pohranu. Browser je obično briše nakon zatvaranja svih privatnih prozora, pa takav način rada nije prikladan za trajno čuvanje podataka.</p></article>
+          </div>
+        </section>
+
+        <section class="content-section" id="mreza">
+          <div class="content-section-head"><span class="kicker">MREŽNI ZAHTJEVI</span><h2>Šta se ipak učitava s interneta.</h2><p>Činjenica da su poslovni zapisi lokalni ne znači da stranica nikada ne pravi mrežni zahtjev.</p></div>
+          <div class="fact-list">
+            <div class="fact-row"><strong>Google Fonts</strong><p>Website i aplikacija učitavaju font Inter s Google Fonts domena. Pri tom zahtjevu pružalac resursa može primiti standardne tehničke podatke mrežne veze, poput IP adrese i podataka browsera.</p></div>
+            <div class="fact-row"><strong>PDF biblioteke</strong><p>Aplikacija učitava jsPDF i html2canvas s jsDelivr CDN-a za PDF funkcije. Kod ne šalje vaše poslovne zapise tim bibliotekama kao mrežni sadržaj, ali browser kontaktira CDN radi preuzimanja skripti.</p></div>
+            <div class="fact-row"><strong>Kontakt podrške</strong><p>Tek kada odaberete slanje prijave, aplikacija otvara <code>mailto:</code> link i priprema email u vašem email programu. Poruka uključuje tekst koji unesete, odabranu sekciju i naziv aktivnog profila.</p></div>
+          </div>
+          <div class="plain-warning" style="margin-top:24px"><strong>Nema potvrđene serverske pohrane poslovnih zapisa.</strong><p>U pregledanom kodu nema poziva aplikacijskom API-ju za slanje faktura, klijenata ili drugih poslovnih zapisa na server. Ova tvrdnja odnosi se na trenutnu verziju implementacije.</p></div>
+        </section>
+
+        <section class="content-section" id="backup">
+          <div class="content-section-head"><span class="kicker">BACKUP I ZAŠTITA</span><h2>Kontrola podataka je u vašim rukama.</h2><p>Aplikacija može izvesti cijeli profil ili pojedinačne sekcije kao JSON datoteke i kasnije ih ponovo uvesti.</p></div>
+          <div class="steps-list">
+            <article class="step-row"><div><strong>Pravite redovne kopije</strong><p>Posebno prije brisanja browser podataka, promjene browsera, prelaska na drugi uređaj ili većeg uvoza podataka.</p></div></article>
+            <article class="step-row"><div><strong>Čuvajte JSON datoteku pažljivo</strong><p>Backup može sadržavati poslovne i kontakt podatke. Aplikacija ne šifrira izvezenu JSON datoteku, pa mjesto čuvanja birate vi.</p></div></article>
+            <article class="step-row"><div><strong>Provjerite prije importa</strong><p>Import zamjenjuje potvrđene sekcije aktivnog profila. Prije uvoza napravite kopiju postojećeg stanja.</p></div></article>
+          </div>
+          <div class="plain-warning" style="margin-top:24px"><strong>Lokalna pohrana nije dodatno šifrirana od strane aplikacije.</strong><p>Zaštita pristupa zavisi od vašeg uređaja, korisničkog računa operativnog sistema i browsera. Nemojte dijeliti backup datoteke s osobama koje ne trebaju pristup tim podacima.</p></div>
+        </section>
+      </div>
+    </div>
+
+    <section class="content-cta"><div class="container"><div class="cta-panel"><div><span class="kicker kicker-light">SAČUVAJTE KOPIJU</span><h2>Napravite backup prije nego što zatreba.</h2><p>Izvoz pravi novu datoteku i ne mijenja postojeće podatke u browseru.</p></div><div class="content-cta-actions"><a class="button button-white button-large" href="../app/index.html#importexport">Izvezi backup</a><a class="button button-ghost button-large" href="../help/index.html#backup">Pročitaj vodič</a></div></div></div></section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-main"><div class="footer-brand"><a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">F</span><span>Fakture</span></a><p>Jednostavan radni prostor za fakture, ponude, predračune i naplatu.</p></div><div class="footer-links"><strong>Proizvod</strong><a href="../features/index.html">Mogućnosti</a><a href="../index.html#kako-radi">Kako radi</a><a href="../app/index.html">Otvori aplikaciju</a></div><div class="footer-links"><strong>Informacije</strong><a href="index.html">Privatnost</a><a href="../help/index.html#faq">Česta pitanja</a><a href="../help/index.html">Pomoć</a></div></div><div class="container footer-bottom"><span>© <span data-year></span> Fakture</span><span>Dizajn i izrada · woxdzn.com</span></div></footer>
+</body>
+</html>

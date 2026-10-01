@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="bs">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Fakture — woxdzn.com</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="css/application.css?v=1">
+  <link rel="stylesheet" href="css/studio-template.css?v=3">
+  <link rel="stylesheet" href="css/editorial-template.css?v=2">
+  <link rel="stylesheet" href="css/compact-template.css?v=1">
+  <link rel="stylesheet" href="css/soft-template.css?v=1">
+  <link rel="stylesheet" href="css/frame-accent-templates.css?v=3">
+  <link rel="stylesheet" href="css/workspace-modules.css?v=1">
+  <link rel="stylesheet" href="css/document-previews.css?v=1">
+</head>
+
+<body>
+  <div id="mobileGate" class="mobile-gate">
+    <div class="mobile-gate-card">
+      <div class="brand-mark">F</div>
+      <h1>Fakture</h1>
+      <p>Molimo vas da Fakture koristite na PC računaru.</p><span>Interfejs je optimizovan za desktop rad.</span>
+    </div>
+  </div>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="brand-row">
+      <div class="brand">
+        <div class="brand-mark">F</div>
+        <div class="brand-copy"><div class="brand-name-row"><strong>Fakture</strong><div class="brand-version" aria-label="Verzija 1.0">v1.0</div></div><span>woxdzn.com</span></div>
+      </div><button class="sidebar-toggle" id="sidebarToggle" title="Sakrij meni">‹</button>
+    </div>
+    <nav class="sidebar-nav">
+      <button class="nav-item active" data-route="dashboard"><span class="nav-icon" aria-hidden="true"><svg
+            viewBox="0 0 24 24">
+            <path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1Z" />
+            <path d="M9 21v-6h6v6" />
+          </svg></span><span class="nav-label">Dashboard</span></button>
+      <button class="nav-item nav-primary" data-route="invoice"><span class="nav-icon" aria-hidden="true"><svg
+            viewBox="0 0 24 24">
+            <path d="M12 5v14M5 12h14" />
+          </svg></span><span class="nav-label">Nova faktura</span></button>
+      <div class="nav-group">
+        <div class="nav-group-title">PRODAJA</div>
+        <button class="nav-item" data-route="invoices"><span class="nav-icon" aria-hidden="true"><svg
+              viewBox="0 0 24 24">
+              <path d="M6 3h9l4 4v14H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z" />
+              <path d="M14 3v5h5M8 13h8M8 17h6" />
+            </svg></span><span class="nav-label">Fakture</span></button>
+        <button class="nav-item" data-route="offers"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24">
+              <path d="M4 4h11l5 5-11 11-5-5Z" />
+              <path d="M9 9h.01" />
+            </svg></span><span class="nav-label">Ponude</span></button>
+        <button class="nav-item" data-route="proformas"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z"/><path d="M14 3v5h5M8 13h8M8 17h5"/></svg></span><span class="nav-label">Predračuni</span></button>
+        <button class="nav-item" data-route="clients"><span class="nav-icon" aria-hidden="true"><svg
+              viewBox="0 0 24 24">
+              <circle cx="12" cy="8" r="4" />
+              <path d="M4 21a8 8 0 0 1 16 0" />
+            </svg></span><span class="nav-label">Klijenti</span></button>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">NAPLATA</div>
+        <button class="nav-item" data-route="payments"><span class="nav-icon" aria-hidden="true"><svg
+              viewBox="0 0 24 24">
+              <rect x="3" y="5" width="18" height="14" rx="2" />
+              <path d="M3 10h18M7 15h3" />
+            </svg></span><span class="nav-label">Plaćanja</span></button>
+        <button class="nav-item" data-route="reports"><span class="nav-icon" aria-hidden="true"><svg
+              viewBox="0 0 24 24">
+              <path d="M4 20V10M10 20V4M16 20v-7M22 20H2" />
+            </svg></span><span class="nav-label">Izvještaji</span></button>
+        <button class="nav-item" data-route="recurring"><span class="nav-icon" aria-hidden="true"><svg
+              viewBox="0 0 24 24">
+              <path d="M20 11a8 8 0 0 0-14.9-3M4 13a8 8 0 0 0 14.9 3" />
+              <path d="M5 4v4h4M19 20v-4h-4" />
+            </svg></span><span class="nav-label">Ponavljajuće fakture</span></button>
+        <button class="nav-item" data-route="calendar"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 10h18M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg></span><span class="nav-label">Kalendar</span></button>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">KATALOG</div>
+        <button class="nav-item" data-route="catalog"><span class="nav-icon" aria-hidden="true"><svg
+              viewBox="0 0 24 24">
+              <rect x="3" y="3" width="7" height="7" rx="1" />
+              <rect x="14" y="3" width="7" height="7" rx="1" />
+              <rect x="3" y="14" width="7" height="7" rx="1" />
+              <rect x="14" y="14" width="7" height="7" rx="1" />
+            </svg></span><span class="nav-label">Usluge i proizvodi</span></button>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">RADNI PROSTOR</div>
+        <button class="nav-item" data-route="expenses"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 3h14v18H5z"/><path d="M8 7h8M8 11h8M8 15h5"/></svg></span><span class="nav-label">Troškovi</span></button>
+        <button class="nav-item" data-route="projects"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 7h7l2 2h9v10H3z"/><path d="M3 7V5h7l2 2"/></svg></span><span class="nav-label">Projekti</span></button>
+        <button class="nav-item" data-route="tasks"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="m8 9 2 2 4-4M8 16h8"/></svg></span><span class="nav-label">Zadaci</span></button>
+        <button class="nav-item" data-route="documents"><span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg></span><span class="nav-label">Dokumenti</span></button>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-title">SISTEM</div>
+        <button class="nav-item" data-route="appearance"><span class="nav-icon" aria-hidden="true"><svg
+              viewBox="0 0 24 24">
+              <path d="M12 3 4 12l8 9 8-9Z" />
+              <path d="m4 12 8 3 8-3" />
+            </svg></span><span class="nav-label">Izgled fakture</span></button>
+        <button class="nav-item" data-route="settings"><span class="nav-icon" aria-hidden="true"><svg
+              viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="3" />
+              <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.09a2 2 0 0 1 1 1.74v.5a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.38a2 2 0 0 0-.73-2.73l-.15-.09a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2Z" />
+            </svg></span><span class="nav-label">Postavke</span></button>
+      </div>
+    </nav>
+    <div class="sidebar-bottom"><button class="support-link" data-route="support"><span class="nav-icon"
+          aria-hidden="true"><svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M9.5 9a2.5 2.5 0 1 1 3.8 2.1c-.8.5-1.3 1-1.3 2.4M12 17h.01" />
+          </svg></span><span class="nav-label">Help &amp; Support</span></button><button type="button"
+        class="company-mini" id="sidebarProfileMenu">
+        <div class="company-avatar" id="sidebarCompanyAvatar">F</div>
+        <div class="company-copy"><strong id="sidebarCompanyName">Moja firma</strong><span
+            id="sidebarCompanyEmail">Podaci firme</span></div>
+      </button>
+      <div class="sidebar-credit">Dizajn i izrada · woxdzn.com</div>
+    </div>
+  </aside>
+  <main class="main">
+    <header class="topbar">
+      <div class="topbar-search"><span class="search-glyph">⌕</span><input id="globalSearch"
+          placeholder="Pretraži fakture, klijente..." autocomplete="off"><kbd>Ctrl K</kbd></div>
+      <div class="topbar-actions"><span class="save-state top-save-state" id="topSaveState">✓ Lokalno sačuvano</span><select class="locale-frozen" aria-label="Jezik aplikacije" title="Lokalizacija je pripremljena, prijevodi uskoro" disabled><option value="bs" selected>BS</option><option value="sl">SL</option><option value="sr">SR</option><option value="en">EN</option></select><div class="notification-anchor"><button class="icon-btn notification-btn" onclick="openNotifications()" title="Obavijesti" aria-label="Obavijesti"><svg viewBox="0 0 24" aria-hidden="true"><path d="M18 10a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 22h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span id="notificationBadge" class="notification-badge"></span></button><div id="notificationPopover"></div></div><button class="btn accent top-new-btn" onclick="commandPalette()">＋ Kreiraj</button><button class="icon-btn" id="themeToggle" title="Dark mode">☾</button><div class="profile-chip" aria-label="Aktivni profil"><div class="profile-avatar" id="topCompanyAvatar">F</div><div class="profile-chip-copy"><span id="topCompanyName">Moja firma</span><small id="topCompanyAccount">Račun nije postavljen</small></div><button class="profile-copy-bank" onclick="copyCompanyBank()" title="Kopiraj broj računa" aria-label="Kopiraj broj računa">Copy</button></div></div>
+    </header>
+    <div id="viewContainer"></div>
+  </main>
+  <div id="commandRoot"></div>
+  <div id="profileRoot"></div>
+  <div id="toast" class="toast"></div>
+  <div id="modalRoot"></div>
+  <script src="js/storage.js"></script>
+  <script src="js/document-core.js?v=documents-1"></script>
+  <script src="js/profiles.js?v=demo-reset-1"></script>
+  <script src="js/calculations.js"></script>
+  <script src="js/ui.js?v=safe-ids-1"></script>
+  <script src="js/dashboard.js?v=targeted-fixes-1"></script>
+  <script src="js/clients.js"></script>
+  <script src="js/invoice.js?v=targeted-fixes-1"></script>
+  <script src="js/settings.js?v=demo-reset-1"></script>
+  <script src="js/history.js?v=status-colors-1"></script>
+  <script src="js/offers.js?v=safe-ids-2"></script>
+  <script src="js/appearance.js?v=templates-readable-1"></script>
+  <script src="js/reports.js?v=advanced-filters-1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+  <script src="js/document-renderer.js?v=preview-export-3"></script>
+  <script src="js/offers-preview.js?v=offer-preview-a4-1"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/support.js"></script>
+  <script src="js/catalog.js?v=categories-3"></script>
+  <script src="js/backup.js?v=safe-import-1"></script>
+  <script src="js/payments.js?v=safe-ids-2"></script>
+  <script src="js/extras.js?v=invoice-editor-2"></script>
+  <script src="js/router.js"></script>
+  <script src="js/app.js?v=targeted-fixes-2"></script>
+  <script src="js/client-center.js?v=targeted-fixes-1"></script>
+  <script src="js/expenses-center.js?v=expenses-center-2"></script>
+    <script src="js/projects-center.js?v=projects-center-3"></script>
+    <script src="js/tasks-center.js?v=tasks-center-1"></script>
+    <script src="js/documents-center.js?v=documents-center-1"></script>
+    <script src="js/settings-center.js?v=settings-center-1"></script>
+    <script src="js/calendar-center.js?v=calendar-center-1"></script>
+    <script src="js/recurring-center.js?v=recurring-center-1"></script>
+    <script src="js/reports-center.js?v=reports-center-1"></script>
+    <script src="js/payments-center.js?v=payments-center-1"></script>
+    <script src="js/invoices-center.js?v=targeted-fixes-1"></script>
+    <script src="js/invoice-enhancements.js?v=targeted-fixes-1"></script>
+    <script src="js/dashboard-center.js?v=targeted-fixes-1"></script>
+    <script src="js/document-updates.js?v=documents-1"></script>
+    <script src="js/proformas.js?v=proformas-1"></script>
+    <script src="js/document-list-filters.js?v=document-filters-1"></script>
+</body>
+
+</html>

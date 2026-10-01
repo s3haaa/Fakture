@@ -1,0 +1,68 @@
+/* Frame: structured cards and a continuous rounded document frame. */
+.template-mini.frame{background:#f7f7f7;border-color:#d9dde2}
+.template-mini.frame:before{left:8px;right:8px;top:7px;height:10px;border-radius:0;background:linear-gradient(90deg,#282b30 0 40%,transparent 40%)}
+.template-mini.frame:after{left:7px;right:7px;bottom:5px;height:28px;border:4px solid #ededee;border-radius:7px;background:repeating-linear-gradient(to bottom,#f0f1f2 0 6px,#fff 6px 10px)}
+.sample-a4.template-frame{position:relative;isolation:isolate;display:flex;flex-direction:column;padding:38px 42px!important;background:#fafafa!important;color:#2b2e33!important;overflow:hidden}
+.sample-a4.template-frame>*{flex-shrink:0;min-width:0}
+.sample-a4.template-frame:before{content:"";position:absolute;z-index:-1;inset:112px 20px 22px;border:6px solid #eeeeef;border-radius:26px;background:#fff}
+.sample-a4.template-frame .sample-top{min-height:0;padding:0 6px 18px;border:0;align-items:center}
+.sample-a4.template-frame .sample-brand{max-width:58%;gap:4px}
+.sample-a4.template-frame .sample-brand:has(.sample-logo-mark),.sample-a4.template-frame .sample-brand:has(img){grid-template-columns:auto minmax(0,1fr);column-gap:12px;row-gap:3px;align-items:center}
+.sample-a4.template-frame .sample-brand:has(.sample-logo-mark) .sample-logo-mark,.sample-a4.template-frame .sample-brand:has(img) img{grid-row:1/3}
+.sample-a4.template-frame .sample-brand:has(.sample-logo-mark)>strong,.sample-a4.template-frame .sample-brand:has(.sample-logo-mark)>span,.sample-a4.template-frame .sample-brand:has(img)>strong,.sample-a4.template-frame .sample-brand:has(img)>span{grid-column:2}
+.sample-a4.template-frame .sample-brand>strong{font-size:22px}
+.sample-a4.template-frame .sample-brand>span{color:#6a6f76}
+.sample-a4.template-frame .sample-logo-mark{border-radius:5px}
+.sample-a4.template-frame .sample-title{min-width:300px;display:grid;grid-template-columns:auto auto;grid-template-rows:auto auto;column-gap:24px;row-gap:3px;align-items:center;justify-content:end;text-align:left}
+.sample-a4.template-frame .sample-title strong{grid-column:1;grid-row:1;font-size:20px}
+.sample-a4.template-frame .sample-title b{grid-column:1;grid-row:2;font-size:14px}
+.sample-a4.template-frame .sample-title span{grid-column:2;font-size:12px;white-space:nowrap}
+.sample-a4.template-frame .sample-title span:nth-of-type(1){grid-row:1}
+.sample-a4.template-frame .sample-title span:nth-of-type(2){grid-row:2}
+.sample-a4.template-frame .sample-parties{gap:12px;padding:12px 0 30px}
+.sample-a4.template-frame .sample-parties>div{padding:15px;border:1px solid #e4e5e7;border-radius:12px;background:#f3f3f4}
+.sample-a4.template-frame .sample-parties small{color:#777c82;letter-spacing:0}
+.sample-a4.template-frame .sample-parties strong{padding:8px 10px;margin:3px -4px 5px;border-radius:8px;background:#fff}
+.sample-a4.template-frame table{border-collapse:separate;border-spacing:0}
+.sample-a4.template-frame table thead tr{background:transparent!important;color:#747980!important}
+.sample-a4.template-frame table th{padding:9px 12px}
+.sample-a4.template-frame table td{padding:13px 14px;border-top:6px solid #fff;border-bottom:0;background:#f3f3f4}
+.sample-a4.template-frame table td:first-child{border-radius:10px 0 0 10px;font-weight:600}
+.sample-a4.template-frame table td:last-child{border-radius:0 10px 10px 0;font-weight:700}
+.sample-a4.template-frame .sample-summary{flex-direction:column;gap:8px;margin-top:18px}
+.sample-a4.template-frame .summary-lines,.sample-a4.template-frame .sample-total{width:100%;padding:13px 16px;border-radius:10px;background:#f3f3f4!important;color:#2b2e33!important}
+.sample-a4.template-frame .summary-lines{gap:8px}
+.sample-a4.template-frame .sample-total strong{color:var(--brand-doc)}
+.sample-a4.template-frame .sample-bottom{margin:auto 0 0;padding:16px;border:1px solid #e4e5e7;border-radius:12px;background:#f3f3f4;gap:45px}
+.sample-a4.template-frame .sample-bottom>div{flex:1}
+.sample-a4.template-frame.document-continuation{padding-top:30px!important}
+.sample-a4.template-frame.document-continuation:before{top:18px}
+.sample-a4.template-frame.document-continuation .document-continuation-head{border:0;background:#f3f3f4}
+
+/* Accent: clean ledger with a tinted header/footer. No QR or payment gimmicks. */
+.template-mini.accent{background:#fff;border-color:#d9dde2}
+.template-mini.accent:before{left:8px;right:47%;top:7px;height:8px;border-radius:0;background:var(--brand-doc)}
+.template-mini.accent:after{left:8px;right:8px;bottom:6px;height:25px;background:linear-gradient(to bottom,color-mix(in srgb,var(--brand-doc) 16%,#fff) 0 8px,transparent 8px 12px,#dfe3e7 12px 13px,transparent 13px)}
+.sample-a4.template-accent{display:flex;flex-direction:column;padding:40px 42px 0!important;background:#fff!important;color:#303338!important;overflow:hidden}
+.sample-a4.template-accent>*{flex-shrink:0;min-width:0}
+.sample-a4.template-accent .sample-top{margin:0 -42px;padding:0 42px 28px;border-bottom:1px solid #e3e6e8}
+.sample-a4.template-accent .sample-brand>strong{font-size:31px;line-height:1;color:var(--brand-doc)}
+.sample-a4.template-accent .sample-brand>span{color:#697078}
+.sample-a4.template-accent .sample-title strong{font-size:18px;color:#303338}
+.sample-a4.template-accent .sample-title b{color:var(--brand-doc)}
+.sample-a4.template-accent .sample-parties{padding:34px 0 32px;border-bottom:1px solid #e3e6e8}
+.sample-a4.template-accent .sample-parties small{color:#303338;letter-spacing:0}
+.sample-a4.template-accent .sample-parties strong{font-size:18px;color:var(--brand-doc)}
+.sample-a4.template-accent table{margin-top:28px}
+.sample-a4.template-accent table thead tr{background:color-mix(in srgb,var(--brand-doc) 17%,#fff)!important;color:#303338!important}
+.sample-a4.template-accent table th{padding:10px 11px;font-weight:700}
+.sample-a4.template-accent table td{padding:14px 11px;border-bottom:1px solid #e3e6e8}
+.sample-a4.template-accent .sample-summary{align-self:flex-end;width:48%;flex-direction:column;gap:10px;margin-top:20px}
+.sample-a4.template-accent .summary-lines,.sample-a4.template-accent .sample-total{width:100%}
+.sample-a4.template-accent .summary-lines{gap:10px}
+.sample-a4.template-accent .sample-total{padding:12px 0;border-top:1px solid #dadddf;border-radius:0;background:transparent!important;color:#303338!important}
+.sample-a4.template-accent .sample-total strong{font-size:28px;color:var(--brand-doc)}
+.sample-a4.template-accent .sample-bottom{margin:auto -42px 0;padding:28px 42px 34px;border:0;background:color-mix(in srgb,var(--brand-doc) 16%,#fff);gap:60px}
+.sample-a4.template-accent .sample-bottom>div{flex:1}
+.sample-a4.template-accent.document-continuation{padding-top:30px!important}
+.sample-a4.template-accent.document-continuation .document-continuation-head{border:0;border-bottom:1px solid #dadddf;border-radius:0;background:transparent}

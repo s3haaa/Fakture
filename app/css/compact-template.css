@@ -1,0 +1,137 @@
+/* Compact invoice template: restrained monochrome layout with dense item rows. */
+.template-mini.compact{
+  background:#fff;
+  border-color:#cfd3d8;
+}
+.template-mini.compact:before{
+  left:8px;right:46%;top:8px;height:8px;border-radius:0;background:#17191d;
+  box-shadow:34px 0 0 -1px #17191d;
+}
+.template-mini.compact:after{
+  left:8px;right:8px;bottom:7px;height:22px;
+  background:repeating-linear-gradient(to bottom,#222 0 1px,transparent 1px 6px);
+}
+
+.sample-a4.template-compact{
+  display:flex;
+  flex-direction:column;
+  padding:46px 48px!important;
+  background:#fff!important;
+  color:#16181b!important;
+  font-family:Arial,Helvetica,sans-serif;
+}
+.sample-a4.template-compact>*{flex-shrink:0;min-width:0}
+.sample-a4.template-compact .sample-top{
+  align-items:flex-start;
+  padding-bottom:24px;
+  border:0;
+}
+.sample-a4.template-compact .sample-title{
+  order:1;
+  text-align:left;
+  gap:3px;
+}
+.sample-a4.template-compact .sample-title strong{
+  font-size:29px;
+  line-height:1;
+  letter-spacing:-1px;
+}
+.sample-a4.template-compact .sample-title b{font-size:12px;margin-bottom:16px}
+.sample-a4.template-compact .sample-title span{font-size:10px;line-height:1.45;color:#555b63}
+.sample-a4.template-compact .sample-brand{
+  order:2;
+  justify-items:end;
+  text-align:right;
+  gap:7px;
+  max-width:48%;
+}
+.sample-a4.template-compact .sample-brand>strong{font-size:25px;line-height:1.05;letter-spacing:-.6px}
+.sample-a4.template-compact .sample-brand>span{font-size:9px;line-height:1.45;color:#555b63}
+.sample-a4.template-compact .sample-brand img{max-width:180px;max-height:54px;object-position:right}
+.sample-a4.template-compact .sample-logo-mark{width:42px;height:42px;border-radius:0;font-size:20px}
+
+.sample-a4.template-compact .sample-parties{
+  grid-template-columns:1fr 1fr;
+  gap:82px;
+  padding:25px 0 30px;
+  border-top:1px solid #1e2125;
+}
+.sample-a4.template-compact .sample-parties>div{gap:3px}
+.sample-a4.template-compact .sample-parties small{
+  margin-bottom:7px;
+  color:#16181b;
+  font-size:10px;
+  letter-spacing:0;
+}
+.sample-a4.template-compact .sample-parties strong{margin:0 0 4px;font-size:13px}
+.sample-a4.template-compact .sample-parties span{font-size:9.5px;line-height:1.35;color:#33383e}
+
+.sample-a4.template-compact table{font-size:9.5px}
+.sample-a4.template-compact table thead tr{
+  background:transparent!important;
+  color:#16181b!important;
+  border-bottom:1.5px solid #202328;
+}
+.sample-a4.template-compact table th{
+  padding:7px 4px;
+  font-size:8.5px;
+  font-weight:700;
+  letter-spacing:0;
+  text-transform:none;
+}
+.sample-a4.template-compact table td{
+  padding:7px 4px;
+  border-bottom:1px solid #e3e5e8;
+  line-height:1.25;
+}
+.sample-a4.template-compact table td:first-child strong{font-weight:500}
+.sample-a4.template-compact table td:first-child small{margin-top:2px;color:#7b8087;font-size:8.5px}
+
+.sample-a4.template-compact .sample-summary{
+  margin-top:17px;
+  gap:22px;
+  align-items:flex-start;
+}
+.sample-a4.template-compact .summary-lines{width:238px;gap:0}
+.sample-a4.template-compact .summary-lines span{
+  padding:5px 0;
+  border-bottom:1px solid #e3e5e8;
+  font-size:9.5px;
+}
+.sample-a4.template-compact .summary-lines em{color:#34383e}
+.sample-a4.template-compact .sample-total{
+  width:220px;
+  min-height:34px;
+  padding:7px 0;
+  border-radius:0;
+  border-bottom:1.5px solid #202328;
+  background:transparent!important;
+  color:#16181b!important;
+}
+.sample-a4.template-compact .sample-total span{font-size:10px}
+.sample-a4.template-compact .sample-total strong{font-size:17px}
+
+.sample-a4.template-compact .sample-bottom{
+  margin-top:34px;
+  padding-top:17px;
+  border-top:1px solid #202328;
+  gap:70px;
+}
+.sample-a4.template-compact .sample-bottom>div{flex:1}
+.sample-a4.template-compact .sample-bottom small{color:#16181b;font-size:10px;letter-spacing:0}
+.sample-a4.template-compact .sample-bottom span,
+.sample-a4.template-compact .sample-bottom p{font-size:9px;line-height:1.45;color:#3f444b}
+.sample-a4.template-compact .sample-bottom p{max-width:360px;margin-top:10px}
+
+.sample-a4.template-compact.document-continuation{padding-top:38px!important}
+.sample-a4.template-compact.document-continuation .document-continuation-head{
+  min-height:30px;
+  margin-bottom:8px;
+  padding:0 0 8px;
+  border:0;
+  border-bottom:1px solid #202328;
+  border-radius:0;
+  background:transparent;
+  color:#555b63;
+}
+.sample-a4.template-compact.document-continuation table td{padding:7px 4px}

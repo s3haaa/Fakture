@@ -1,0 +1,125 @@
+/* Editorial invoice template: diagonal composition inspired by contemporary print design. */
+.template-mini.editorial{
+  background:linear-gradient(164deg,color-mix(in srgb,var(--brand-doc) 13%,#fff) 0 42%,#fff 42% 67%,color-mix(in srgb,var(--brand-doc) 9%,#fff) 67% 100%);
+  border-color:#d9dde3;
+}
+.template-mini.editorial:before{
+  left:9px;right:38%;top:9px;height:6px;border-radius:0;background:#1d2025;
+  box-shadow:0 17px 0 -2px #1d2025;
+}
+.template-mini.editorial:after{
+  left:9px;right:9px;bottom:7px;height:12px;background:repeating-linear-gradient(to bottom,#cfd3d8 0 1px,transparent 1px 4px);
+}
+
+.sample-a4.template-editorial{
+  position:relative;
+  isolation:isolate;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+  padding:0 50px 44px!important;
+  background:#fff!important;
+  color:#1d2025!important;
+}
+.sample-a4.template-editorial .sample-top{
+  position:relative;
+  z-index:1;
+  min-height:210px;
+  margin:0 -50px;
+  padding:48px 50px 82px;
+  border:0;
+  background:linear-gradient(135deg,color-mix(in srgb,var(--brand-doc) 13%,#fff),#fff7f4 78%);
+  clip-path:polygon(0 0,100% 0,100% 68%,0 100%);
+}
+.sample-a4.template-editorial .sample-brand{gap:10px;max-width:52%}
+.sample-a4.template-editorial .sample-brand>strong{font-size:30px;line-height:1;letter-spacing:-1.2px;color:#17191d}
+.sample-a4.template-editorial .sample-brand>span{max-width:300px;font-size:11px;line-height:1.55;color:#666b72}
+.sample-a4.template-editorial .sample-logo-mark{width:44px;height:44px;border-radius:0;font-size:19px}
+.sample-a4.template-editorial .sample-brand img{max-width:190px;max-height:66px}
+.sample-a4.template-editorial .sample-title{gap:7px;text-align:left;min-width:235px}
+.sample-a4.template-editorial .sample-title strong{font-size:26px;letter-spacing:-.7px;text-transform:none}
+.sample-a4.template-editorial .sample-title b{font-size:14px}
+.sample-a4.template-editorial .sample-title span{font-size:11px;color:#777b82}
+
+.sample-a4.template-editorial .sample-parties{
+  position:relative;
+  z-index:2;
+  min-height:210px;
+  margin:-62px -50px 22px;
+  padding:66px 50px 52px;
+  gap:0;
+  background:linear-gradient(166deg,#fff 0 77%,color-mix(in srgb,var(--brand-doc) 10%,#fff) 77% 100%);
+  clip-path:polygon(0 16%,100% 0,100% 82%,0 100%);
+}
+.sample-a4.template-editorial .sample-parties:after{
+  content:"";
+  position:absolute;
+  top:24px;bottom:24px;left:50%;
+  width:1px;
+  background:#22262b;
+}
+.sample-a4.template-editorial .sample-parties>div{padding:0 28px 0 0;align-content:start}
+.sample-a4.template-editorial .sample-parties>div+div{padding:0 0 0 56px}
+.sample-a4.template-editorial .sample-parties small{font-size:10px;letter-spacing:0;color:#1d2025}
+.sample-a4.template-editorial .sample-parties strong{font-size:15px;margin:7px 0}
+.sample-a4.template-editorial .sample-parties span{font-size:10px;line-height:1.5;color:#4f555d}
+
+.sample-a4.template-editorial table{font-size:10px}
+.sample-a4.template-editorial table thead tr{background:transparent!important;color:#1d2025!important;border-bottom:1.5px solid #2a2d31}
+.sample-a4.template-editorial table th{padding:12px 4px;font-size:11px;font-weight:500;text-transform:none;letter-spacing:0}
+.sample-a4.template-editorial table td{padding:14px 4px;border-bottom:1px solid #e1e3e6}
+.sample-a4.template-editorial table td:first-child strong{font-weight:600}
+.sample-a4.template-editorial table td:first-child small{color:#969ba2}
+
+.sample-a4.template-editorial .sample-summary{
+  margin:18px -50px 0;
+  padding:18px 50px;
+  border-top:1px solid #cfd2d6;
+  border-bottom:1px solid #cfd2d6;
+  justify-content:space-between;
+  align-items:center;
+}
+.sample-a4.template-editorial .sample-summary:before{
+  content:"Obračun";
+  font-size:12px;
+  color:#73787f;
+}
+.sample-a4.template-editorial .summary-lines{width:250px;gap:7px}
+.sample-a4.template-editorial .summary-lines span{font-size:10px}
+.sample-a4.template-editorial .sample-total{
+  width:220px;
+  padding:0;
+  border-radius:0;
+  background:transparent!important;
+  color:#1d2025!important;
+}
+.sample-a4.template-editorial .sample-total span{font-size:13px;font-weight:500}
+.sample-a4.template-editorial .sample-total strong{font-size:20px;font-weight:500}
+.sample-a4.template-editorial .sample-bottom{
+  margin:auto -50px 0;
+  padding:22px 50px 0;
+  border:0;
+  gap:70px;
+}
+.sample-a4.template-editorial .sample-bottom>div{flex:1}
+.sample-a4.template-editorial .sample-bottom small{font-size:11px;letter-spacing:0;color:#1d2025}
+.sample-a4.template-editorial .sample-bottom span,.sample-a4.template-editorial .sample-bottom p{font-size:9px;line-height:1.55;color:#747980}
+.sample-a4.template-editorial .sample-bottom p{max-width:360px}
+.sample-a4.template-editorial> *{flex-shrink:0;min-width:0}
+
+.sample-a4.template-editorial.document-continuation{padding-top:38px!important}
+.sample-a4.template-editorial.document-continuation .document-continuation-head{
+  border:0;
+  border-bottom:1px solid #292d31;
+  border-radius:0;
+  padding:0 0 12px;
+  background:transparent;
+}
+.sample-a4.template-editorial.document-continuation table td{padding:13px 4px}
+.sample-a4.template-editorial.document-intermediate:after{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  left:0;right:0;bottom:0;height:135px;
+  background:linear-gradient(166deg,#fff 0 30%,color-mix(in srgb,var(--brand-doc) 10%,#fff) 30% 100%);
+}

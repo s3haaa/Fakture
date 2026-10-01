@@ -1,0 +1,194 @@
+/* Document preview utilities
+ * Consolidated in original load order. Section order is part of the cascade contract.
+ */
+
+/* ===== Invoice preview readability ===== */
+/* Balanced A4 typography: readable at print size without sacrificing table capacity. */
+.sample-a4{font-size:13px!important;line-height:1.4}
+.sample-a4 .sample-brand>span,.sample-a4 .sample-title span{font-size:12px!important;line-height:1.4}
+.sample-a4 .sample-title b{font-size:14px!important}
+.sample-a4 .sample-parties small,.sample-a4 .sample-bottom small{font-size:11px!important;line-height:1.35}
+.sample-a4 .sample-parties strong{font-size:14px!important;line-height:1.35}
+.sample-a4 .sample-parties span{font-size:12px!important;line-height:1.4}
+.sample-a4 table{font-size:13px!important;line-height:1.4}
+.sample-a4 table th{font-size:11px!important;line-height:1.35}
+.sample-a4 table td{font-size:13px!important;line-height:1.4}
+.sample-a4 table td:first-child small{font-size:11px!important;line-height:1.35}
+.sample-a4 .summary-lines span{font-size:13px!important;line-height:1.4}
+.sample-a4 .sample-total span{font-size:11px!important}
+.sample-a4 .sample-total strong{font-size:20px!important}
+.sample-a4 .sample-bottom span,.sample-a4 .sample-bottom p{font-size:12px!important;line-height:1.45}
+.sample-a4 .document-continuation-head{font-size:11px!important}
+.sample-a4 .document-continuation-head strong{font-size:12px!important}
+.sample-a4 .document-continued-footer{font-size:10px!important}
+.sample-a4 .document-page-number{font-size:9px!important}
+
+/* ===== Proforma preview ===== */
+/* The host is a transparent viewport; only .sample-a4 is a sheet of paper.
+   Keep the document at A4 dimensions for pagination and PDF export. */
+.preview-shell:has(#proformaPreview) {
+  display: block !important;
+  min-height: 0 !important;
+  overflow: auto !important;
+}
+.preview-shell #proformaPreview {
+  box-sizing: border-box !important;
+  width: 794px !important;
+  min-width: 794px !important;
+  max-width: none !important;
+  min-height: 0 !important;
+  aspect-ratio: auto !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  zoom: var(--proforma-preview-scale, 1);
+}
+.proforma-live-preview.sample-a4 {
+  color-scheme: light;
+  --text: #172033;
+  --muted: #7c8799;
+  --line: #e8ecf2;
+  --surface: #f5f7fa;
+  --card: #fff;
+  --soft: #f1f4f8;
+  --dark: #172033;
+  box-sizing: border-box !important;
+  width: 794px !important;
+  min-width: 794px !important;
+  min-height: 1123px !important;
+  margin: 0 !important;
+  padding: 52px 56px !important;
+}
+@media print {
+  #proformaPreview { zoom: 1 !important; }
+}
+
+/* ===== Workspace text wrapping utilities ===== */
+/* Free-form text must wrap inside cards, table columns and detail dialogs. */
+.expenses-table td:not(.bulk-select-cell):first-child,
+.expenses-table .bulk-select-cell + td,
+.documents-table td:not(.bulk-select-cell):first-child,
+.documents-table .bulk-select-cell + td,
+.project-detail-table td:first-child {
+  min-width: 180px;
+  width: 28%;
+  max-width: 360px;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+}
+.expenses-table td > strong,
+.expenses-table td > .cell-sub,
+.documents-table td > strong,
+.documents-table td > .cell-sub,
+.documents-table .document-location,
+.project-detail-table td:first-child > strong,
+.projects-page .project-card-description,
+.tasks-page .task-description,
+.tasks-page .task-note,
+.expense-detail-note p,
+.project-detail-head p,
+.project-note-block p,
+.task-detail > p {
+  display: block;
+  min-width: 0;
+  max-width: 100%;
+  white-space: pre-wrap !important;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  overflow: visible;
+  text-overflow: clip;
+  -webkit-line-clamp: unset;
+}
+.projects-page .project-card-enhanced,
+.tasks-page .task-card,
+.tasks-page .task-card-main,
+.project-detail-head > div,
+.expense-detail-grid > div,
+.task-detail {
+  min-width: 0;
+}
+.tasks-page .task-card-title-row h3,
+.project-detail-title strong {
+  min-width: 0;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+#exNote, #prDescription, #prNote, #taDescription, #taNote, #doNote {
+  min-width: 0;
+  max-width: 100%;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+/* Selection is a narrow utility column, never the description column. */
+.table.bulk-mode .bulk-select-cell {
+  box-sizing: border-box;
+  width: 40px !important;
+  min-width: 40px !important;
+  max-width: 40px !important;
+  padding: 10px 8px !important;
+  text-align: center !important;
+}
+.bulk-select-cell input { width: 16px; height: 16px; margin: 0; vertical-align: middle; accent-color: var(--accent); }
+
+/* Same filter controls as invoices; wrappers own the border and focus ring. */
+.invoice-filter-toolbar.document-filter-toolbar {
+  grid-template-columns: minmax(220px, 1.7fr) repeat(3, minmax(110px, 1fr)) repeat(2, minmax(150px, 1fr)) minmax(125px, 1fr) auto !important;
+}
+.invoice-filter-toolbar.document-filter-toolbar .filter-search-wrap,
+.invoice-filter-toolbar.document-filter-toolbar .date-filter {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+  min-width: 0 !important;
+  padding: 0 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--card);
+}
+.invoice-filter-toolbar.document-filter-toolbar .filter-search-wrap input,
+.invoice-filter-toolbar.document-filter-toolbar .date-filter input {
+  flex: 1;
+  width: 100%;
+  min-width: 0 !important;
+  height: 100%;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+.invoice-filter-toolbar.document-filter-toolbar .date-filter span { flex: none; color: var(--muted); }
+.invoice-filter-toolbar.document-filter-toolbar :is(.filter-search-wrap, .date-filter):focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 12%, transparent);
+}
+.clients-table .client-link-number { min-width: 32px; justify-content: center; font-variant-numeric: tabular-nums; }
+.expense-category-manager .inline-field { display: flex; gap: 8px; align-items: center; }
+#newExpenseCategory {
+  box-sizing: border-box;
+  flex: 1;
+  min-width: 0;
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--card);
+  color: var(--text);
+  font: inherit;
+}
+#newExpenseCategory:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 12%, transparent); }
+@media (max-width: 1600px) {
+  .invoice-filter-toolbar.document-filter-toolbar { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
+  .invoice-filter-toolbar.document-filter-toolbar .filter-search-wrap { grid-column: auto; }
+}
+@media (max-width: 1100px) {
+  .invoice-filter-toolbar.document-filter-toolbar .filter-search-wrap { grid-column: 1 / -1; }
+}
+@media (max-width: 700px) {
+  .invoice-filter-toolbar.document-filter-toolbar { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+}
+
